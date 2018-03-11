@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Bitcoin Paper Wallet Generator</title>
+	<title>Stipend Paper Wallet Generator</title>
 	<!--
 
     generate-wallet.html (from https://bitcoinpaperwallet.com)
@@ -93,38 +93,12 @@ function setCryptoCurrency(toThis) {
 	window.currencyName = toThis;
 	switch (toThis)
 	{
-	case 'Bitcoin':
-	  window.networkVersion = 0x00;
-	  window.privateKeyPrefix = 0x80;
-	  window.WIFPrefix = '5';
-	  window.compressedWIFPrefix = '[LK]';
-	  break;
 	case 'Stipend':
-		window.networkVersion = 0x3f;
+		window.networkVersion = 0x3f
 		window.privateKeyPrefix = 0xbf;
-		window.WIFPrefix = '6';
+		window.WIFPrefix = '7';
 		window.compressedWIFPrefix = '4';
 		document.title = 'Stipend Paper Wallet Generator';
-	case 'Litecoin':
-		window.networkVersion = 0x30;
-		window.privateKeyPrefix = 0xb0;
-		window.WIFPrefix = '6';
-		window.compressedWIFPrefix = 'T';
-		document.title = 'Litecoin paper wallet generator';
-		break;
-	case 'Dogecoin':
-		window.networkVersion = 0x1e;
-		window.privateKeyPrefix = 0x9e;
-		window.WIFPrefix = '6';
-		window.compressedWIFPrefix = 'Q';
-		document.title = 'Dogecoin paper wallet generator. Wow! Many coin. Such shiny.';
-		break;
-	case 'Testnet':
-		window.networkVersion = 0x6F;
-		window.privateKeyPrefix = 0xEF;
-		window.WIFPrefix = '9';
-		window.compressedWIFPrefix = 'c';
-		document.title = 'Bitcoin TESTNET paper wallet generator';
 		break;
 	default:
 	  alert ('Invalid cryptocurrency "' + toThis + '" at initialization. Defaulting to Stipend.');
@@ -147,18 +121,8 @@ switch (myDesign) {
 	case 'alt-stipend':
 		setCryptoCurrency('Stipend');
 		break;
-	case 'alt-litecoin':
-		setCryptoCurrency('Litecoin');
-		break;
-	case 'alt-dogecoin':
-		setCryptoCurrency('Dogecoin');
-		break;
-	case 'alt-testnet':
-		setCryptoCurrency('Testnet');
-		break;
 	default:
 	setCryptoCurrency('Stipend');
-	window.suppliesURL = 'https://bitcoinpaperwallet.com/#purchase'; // remove special currency flag
 }
 
 </script>
@@ -9962,7 +9926,7 @@ Bitcoin.Util = {
 		}
 
 		.right { text-align: right; }
-		.walletarea { display: none; border-top: 2px solid #f7931a; }
+		.walletarea { display: none; border-top: 2px solid #000; }
 		.keyarea { font-family: Courier New; height: 110px; text-align: left; position: relative; padding: 5px; }
 		.keyarea .public { float: left; }
 		.keyarea .pubaddress { display: inline-block; height: 40px; padding: 0 0 0 10px; float: left; }
@@ -9976,13 +9940,13 @@ Bitcoin.Util = {
 		.faqs li { padding: 3px 0; }
 		body { margin-top: 0; font-family: Arial; background-image:url(images/webpage-background.png); background-repeat: repeat-y; background-position: center; background-color: #e2f9bd; font-size: 14px;}
 
-		h1 { font-size: 24px; font-weight: 100; color: #090; margin:0 0 10px 0; padding:0; }
+		h1 { font-size: 24px; font-weight: 100; color: #000; margin:0 0 10px 0; padding:0; }
 
 		a, a:visited { text-decoration: none; color: #ff6c00; }
 		a:hover {color: #0000FF; text-decoration: underline;}
 
 
-		#generatelabelmovemouse { background-color:#EFFFDD; position: absolute; z-index: 20; top: -10px; left: 0; margin: 0;  padding: 25px 55px; width: 901px; text-align: left;
+		#generatelabelmovemouse { background-color:#eee; position: absolute; z-index: 20; top: -10px; left: 0; margin: 0;  padding: 25px 55px; width: 901px; text-align: left;
 		-webkit-box-shadow: #B3B3B3 1px 0px 1px; -moz-box-shadow: #B3B3B3 1px 0px 1px; box-shadow: #B3B3B3 1px 0px 1px; }
 
 		#generate { height: 450px; text-align: left; position: relative; padding: 5px; border: none; line-height: 24px;}
@@ -9995,7 +9959,7 @@ Bitcoin.Util = {
 		#generatelabelbitcoinaddress { font-size: 90%;}
 
 		#seedpoolarea { display: none; }
-		#seedpooldisplay {  font-family: monospace; font-size: 12px; width: 680px; padding: 0 0 0 0; word-wrap: break-word; color: #FF9637; line-height: 16px;}
+		#seedpooldisplay {  font-family: monospace; font-size: 12px; width: 680px; padding: 0 0 0 0; word-wrap: break-word; color: #000; line-height: 16px;}
 
 		#seedSkipper { font-size: 11px; text-align: center; line-height: 14px;}
 		.seedpoint { width: 12px; height: 12px; display: block; border-radius: 6px; background-color: #EAFEC8; border: 1px solid #EEEEEE; position: absolute; z-index: -10; }
@@ -10025,13 +9989,13 @@ Bitcoin.Util = {
 
 		#backarea .backsvg { width: 1010px; height: 331px; border: 0; margin: 0; padding: 0; left: 0; }
 
-		#printeradjust { color: #060; font-size: 12px; }
-		#printeradjust span { background-color: #e2f9bd; padding: 2px 3px; border: 1px solid #009900; font-family: "Courier New", Courier, monospace; font-weight: bold; font-size: 12px;}
-		#printeradjust a:hover span { background-color: #CCFFCC; }
+		#printeradjust { color: #ffffff; font-size: 12px; font-weight: bold}
+		#printeradjust span { background-color: #ffffff; padding: 2px 3px; border: 1px solid #ffffff; font-family: "Courier New", Courier, monospace; font-weight: bold; font-size: 12px;}
+		#printeradjust a:hover span { background-color: #ffffff; }
 		#printeradjust a, #printeradjust a:hover {text-decoration: none;}
 		#printeradjust input { text-align: center; margin: 0 2px; width: 20px;}
 
-		#detailwallet { margin-left: 35px; color: #d36200; }
+		#detailwallet { margin-left: 35px; color: #000; }
 
 		#paperarea { min-height: 120px; display: none; }
 		#paperarea .keyarea { border: 2px solid #f7931a; border-top: 0; }
@@ -10137,30 +10101,6 @@ Bitcoin.Util = {
 				/* transform-origin:top left; */
 				transform:rotate(90deg);
 		}
-
-		/* Back side */
-		#backText { position: absolute; margin-top: 73px; left: 260px; width: 600px; font-size: 8px; }
-		#backText #backPaperWallet { position: absolute; margin-left: 202px; color: #fb9300; font-size: 11px; text-transform: uppercase; font-style: italic; }
-		#backText #backAmount { position: absolute; margin-left: 421px; margin-top: 7px; color: #666666;}
-		#backText #backDate { position: absolute; margin-left: 558px; margin-top: 7px; color: #666666; }
-		#backText #backLines { position: absolute; margin-left: 416px; margin-top: 1px; }
-		#backText #backLines p { border-bottom: 1px dotted #999; line-height: 11px; width: 174px;}
-		#backText #backNotes { position: absolute; margin-left: 421px; margin-top: 105px; color: #666666; }
-		#backText #backLongText { position: absolute; margin-left: 200px; width: 210px; margin-top: 16px; font-size: 8px;}
-		#backText #backLongText ul { margin: 0 0 0 14px; padding: 0; list-style: square outside none; }
-		#backText #backLongText li { margin: 0; padding: 0 0 3px 0; }
-		#backText #backLongText li strong { font-weight: 400; color: red; }
-
-		#backText #backSeal { position: absolute; margin-top: 53px; margin-left: 10px; z-index: 1100; display: none;}
-		#backText #backSealBig { position: absolute; margin: 18px 0 0 0; padding: 0 0 0 0; z-index: 1200; width: 105px;
-								  text-shadow: rgb(201, 251, 135) 2px 2px 0px, rgb(156, 156, 156) 4px 4px 0px;
-								  text-align: center; font-size: 28px; color: #000000;
-								  font-weight: bold; font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif; }
-		#backText #backSealSmall { position: absolute; margin: 53px 0 0 0; padding: 0 0 0 0; z-index: 1200; width: 105px;
-		font-family: ubuntu_mono_bold, Arial, Helvetica, sans-serif; text-align: center; font-size: 10px; letter-spacing: .1em; color: #22461b;
-		text-shadow: rgb(255, 255, 255) 1px 1px 1px }
-		#backText #backCustomMessageEntry { background-color: #EEE; width: 195px; height: 150px; font-size: 10px; }
-		#backText #backCustomMessage { display: none; position: absolute; overflow: hidden; margin-left: 210px; width: 195px; margin-top: 20px; font-size: 11px; line-height: 15px; height: 150px; }
 
 		.nicerButton { /* thanks http://www.cssbuttongenerator.com */
 			-moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
@@ -10314,19 +10254,19 @@ Bitcoin.Util = {
 
 		@media screen
 		{
-			#tagline { margin: 10px 0 0 310px; font-style: italic; font-size: 18px; color: #666; }
-			#tagline span {padding-left: 10px; font-size: 11px; color: #999;}
-			#tagsite { margin: 5px 0 20px 310px; font-size: 14px; color: #666; }
+			#tagline { margin: 10px 0 0 310px; font-style: italic; font-size: 18px; color: #ffffff; }
+			#tagline span {padding-left: 10px; font-size: 11px; color: #ffffff;}
+			#tagsite { margin: 5px 0 20px 310px; font-size: 14px; color: #ffffff; }
 
 
 			#tagwarning { position: absolute; left: 250px; top: 25px; font-size: 12px; color: red; }
 			.menu { text-align: left; }
-			.menu .tab { border-top-left-radius: 5px; border-top-right-radius: 5px; display: inline-block; background-color: #e2f9bd;
-						 color: #060; font-size: 12px;
-						 border-top: 2px solid #f7931a;
-						 border-left: 2px solid #f7931a;
-						 border-right: 2px solid #f7931a;
-						 border-bottom: 2px solid #e2f9bd;
+			.menu .tab { border-top-left-radius: 5px; border-top-right-radius: 5px; display: inline-block; background-color: #ffffff;
+						 color: #000; font-size: 12px;
+						 border-top: 2px solid #ffffff;
+						 border-left: 2px solid #ffffff;
+						 border-right: 2px solid #ffffff;
+						 border-bottom: 2px solid #ffffff;
 						 padding: 4px 8px; margin: 0 2px 0 0; position: relative; top: 2px; z-index: 110; cursor: pointer; }
 			.menu .tab:hover { color: #090; }
 			.menu .tab.selected { background-color: #FFF; border-bottom: 4px solid #FFF; cursor: default; font-weight: bold; }
@@ -10363,9 +10303,9 @@ Bitcoin.Util = {
 			.footer .copyright { font-size: 90%; clear: both; padding: 5px 0; }
 			.footer .copyright span { padding: 10px 0; }
 
-			#siginfo, #selfinfo { margin: 10px 100px; border: 1px solid #FF9705; padding: 15px; background-color: #FFFFF6; color: #333; z-index: 10000; font-size: 12px;}
+			#siginfo, #selfinfo { margin: 10px 100px; border: 1px solid #000; padding: 15px; background-color: #FFFFF6; color: #333; z-index: 10000; font-size: 12px;}
 
-			#supplyKeys { float: left; background-color: #EEFED0; border: 1px solid #CCCCCC; padding: 8px; }
+			#supplyKeys { float: left; background-color: #000; border: 1px solid #CCCCCC; padding: 8px; }
 		}
 
 		@media print
@@ -10419,8 +10359,8 @@ Bitcoin.Util = {
               <span><a href="?culture=fr" id="culturefr">Français</a></span> -->
               &nbsp;
           	</div>
-			<div id="tagline">Open Source JavaScript <script type="text/javascript">document.write(window.currencyName);</script> Paper Wallet Generator <span>Updated Sep 22, 2017</span></div>
-			<div id="tagsite">For help, security tips, or wallet making supplies visit <a href="https://bitcoinpaperwallet.com">bitcoinpaperwallet.com</a></div>
+			<div id="tagline">Open Source JavaScript <script type="text/javascript">document.write(window.currencyName);</script> Paper Wallet Generator <span>Updated Mar 10, 2018</span></div>
+			<div id="tagsite">For help, guides, or to learn  more about Stipend, visit <a href="https://stipend.me">www.stipend.me</a></div>
             <div id="tagwarning"></div>
 			<div id="seedpoolarea"><textarea rows="16" cols="62" id="seedpool"></textarea></div>
 
@@ -10480,14 +10420,10 @@ Bitcoin.Util = {
 				</div>
 				<div class="instructionsarea">
 					<div class="notes">
-						<h1><span id="instructions0">Welcome! Let's print out a beautiful and secure wallet for your <script type="text/javascript">document.write(window.currencyName);</script>s.</span></h1>
+						<h1><span id="instructions0">Welcome! Let's print out a beautiful and secure wallet for your <script type="text/javascript">document.write(window.currencyName);</script>.</span></h1>
 						<span id="instructions1"><em>Here's an overview of what will happen, step by step.</em></span> <br>
 						<br>
 						<div style="float: right; width: 410px; padding-left: 30px; margin-left: 20px; border-left: 4px solid #EEE;">
-
-
-                        <img id="designPreview" src="images/finished-sample-sealed.jpg" width="400" height="203" alt="Sealed Wallet" >
-
 						<h2><span id="instructions01">Basic security checklist:</span></h2>
 						<ul>
                         <li>
@@ -10514,7 +10450,7 @@ Bitcoin.Util = {
 						  }
 						</script>
                         </li>
-                        <li><strong>?</strong> Are you using a secure operating system installation guaranteed to be free of spyware and viruses, for example, an <a href="#" onClick="window.open('https://bitcoinpaperwallet.com/ubuntu-linux-live-bootable-cd/', '_blank'); return false;">Ubuntu LiveCD?</a></li>
+                        <li><strong>?</strong> Are you using a secure operating system installation guaranteed to be free of spyware and viruses, for example, an Ubuntu LiveCD?</li>
                         </ul>
 
                         <p><a href="https://bitcoinpaperwallet.com/#security" target="_blank">More security tips and answers to frequently asked questions &raquo;</a></p>
@@ -10523,63 +10459,27 @@ Bitcoin.Util = {
 						<span id="instructions2">
                         <p style="margin-top: 0;"><strong>Change your wallet's design, language, or cryptocurrency here:</strong>
                           <select name="designPicker" id="designPicker" style="font-size: 12px;" onChange="setDesign(this.value, false);">
-                            <option value="default">Standard Bitcoin Design</option>
-                            <option value="bitcoincash">Bitcoin Cash Design</option>
-                            <option value="blackwhite">Black &amp; White Bitcoin</option>
-                            <option value="holiday">Holiday / Christmas Bitcoin (English)</option>
-                            <option value="chinese-new-year">Chinese New Year Bitcoin (Simplified Chinese)</option>
-                            <option value="traditional-chinese-new-year">Chinese New Year Bitcoin (Traditional Chinese)</option>
-                            <option value="hobbit">"HobBitcoin" :)</option>
-                            <option value="custom">Your own custom Bitcoin design</option>
-                            <option value="default">--- Other Cryptocurrencies ---</option>
-                            <option value="alt-litecoin">Litecoin LTC</option>
-                            <option value="alt-dogecoin">Dogecoin DOGE</option>
-                            <option value="counterparty">Counterparty XCP</option>
-														<option value="alt-stipend">Stipend SPD</option>
-                            <option value="alt-testnet">"Testnet"</option>
+														<option value="alt-stipend">Stipend (SPD)</option>
                           </select>
-                          <select name="langPicker" id="langPicker" style="font-size: 12px; display: inline;" onChange="setDesign('default', false, this.value);">
-                            <option value="english">English</option>
-                            <option value="chinese">Chinese</option>
-                            <option value="traditional-chinese">Chinese (Traditional)</option>
-                            <option value="czech">Czech</option>
-                            <option value="danish">Danish</option>
-                            <option value="dutch">Dutch</option>
-                            <option value="french">French</option>
-                            <option value="german">German</option>
-                            <option value="hebrew">Hebrew</option>
-                            <option value="italian">Italian</option>
-                            <option value="japanese">Japanese</option>
-                            <option value="polish">Polish</option>
-                            <option value="portuguese">Portuguese</option>
-                            <option value="russian">Russian</option>
-                            <option value="spanish">Spanish</option>
-                            <option value="swedish">Swedish</option>
-                            <option value="welsh">Welsh</option>
-                          </select>
+													<select name="langPicker" id="langPicker" style="font-size: 12px; display: inline;" onChange="setDesign('default', false, this.value);">
+														<option value="english">English</option>
+													</select
                         </p>
+												<br><br>
                         <strong>Step 1: Calibrate Printer</strong><br>
 Before printing out a wallet you may need to calibrate your output using the <em>zoom</em> and <em>horizontal&nbsp;shift</em> adjustments to account for your particular browser and printer combination. Otherwise, your wallet's back side may not line up with the front side.</span> <br>
 <br>
 <span id="instructions3"><strong>Step 2: Print Front</strong><br>
-Next you will print out the front side of your wallet. The public address and private key will be random-generated, <em>or</em> you can supply your own key by rolling dice, shuffling cards, etc. You may also duplicate an existing paper wallet or provide a "vanity" address if you have one. Tip: If you are printing several wallets, it's possible to <a href="https://bitcoinpaperwallet.com/printing-and-paper-tips/" target="_blank">print two per page</a>.</span> <br>
+Next you will print out the front side of your wallet. The public address and private key will be random-generated, <em>or</em> you can supply your own key by rolling dice, shuffling cards, etc. You may also duplicate an existing paper wallet or provide a "vanity" address if you have one. Tip: If you are printing several wallets, it's possible to print two per page.</span> <br>
 <br>
 <span id="instructions4"><strong>Step 3: Print Back</strong><br>
 Flip the front page over and put it back in your printer. This isn't just for good looks! The reverse design includes important tamper-resistant safeguards.</span> <br>
 <br>
 <span id="instructions5"><strong>Step 4: Cut, Fold, Seal &amp; Fund</strong><br>
-Find your scissors! The final step is to cut out your wallet, fold it, and seal it  with tamper-evident <a href="#" onClick="window.open(window.suppliesURL, '_blank'); return false;">hologram stickers</a> or at least opaque (light-blocking) tape. Now you're ready to transfer funds from your online holdings to your new wallet.</span> <br>
-<br>
-<span><a href="https://www.youtube.com/watch?v=a47rrYBWjWQ" target="_blank" class="nicerButton" style="width: 400px;">90 second tutorial video on YouTube &raquo;</a></span>
-<br /><br />
-						<span><a href="#" onClick="window.open(window.suppliesURL, '_blank'); return false;" class="nicerButton" style="width: 400px; margin-bottom: 10px;">Order hologram stickers / zip bags / Ubuntu CD &raquo;</a></span>
-
-
-
+Find your scissors! The final step is to cut out your wallet, fold it, and seal it  with tamper-evident opaque (light-blocking) tape. Now you're ready to transfer funds from your online holdings to your new wallet.</span>
 </div>
 				</div>
 			</div><!-- end landarea -->
-
 
 
 			<div id="calibratearea" class="walletarea">
@@ -10589,7 +10489,7 @@ Find your scissors! The final step is to cut out your wallet, fold it, and seal 
                         (1) Your printed ruler is horizontally centered on the page, leaving equal margins on the left and right sides of the page. (INCREASE the horizontal shift to push the ruler to the right.)<br />
                         (2) Your printed ruler is approximately the same size as a real ruler. Smaller by up to 1 inch is fine. (REDUCE the zoom to increase the ruler size.) <br /><br />
                         <br />
-                        What settings worked best for you? <a href="https://bitcoinpaperwallet.com/feedback/" target="_blank">Feedback form &raquo;</a></p>
+                        Let us know what settings worked best for you!</p>
 						<span class="print">
                         <a href="#" class="nicerButton" onClick="doPrint('calibration');">Print Calibration Test</a>
                         </span>
@@ -10713,95 +10613,7 @@ Find your scissors! The final step is to cut out your wallet, fold it, and seal 
                         <span class="print"><a href="#" class="nicerButton" onClick="doPrint();">Print Wallet Back</a></span>
                     <br clear="all" />
 				</div>
-
-				<div id="backTextControl" style="font-size: 12px;">
-                   <div style="float: left; width: 375px; text-align: right;">
-                  Denomination:
-                  <select id="backDenominationSelect" onChange="setDenomination(this.value);">
-                    <option value="">*** None ***</option>
-                    <option value="10 BTC">10 BTC</option>
-                    <option value="5 BTC">5 BTC</option>
-                    <option value="2 BTC">2 BTC</option>
-                    <option value="1 BTC">1 BTC</option>
-                    <option value="50000 Bits">50000 Bits</option>
-                    <option value="10000 Bits">10000 Bits</option>
-                    <option value="5000 Bits">5000 Bits</option>
-                    <option value="1000 Bits">1000 Bits</option>
-                    <option value="500 Bits">500 Bits</option>
-                    <option value="100 Bits">100 Bits</option>
-                    <option value="50000 mBTC">50000 mBTC</option>
-                    <option value="10000 mBTC">10000 mBTC</option>
-                    <option value="5000 mBTC">5000 mBTC</option>
-                    <option value="1000 mBTC">1000 mBTC</option>
-                    <option value="500 mBTC">500 mBTC</option>
-                    <option value="100 mBTC">100 mBTC</option>
-                    <option value="50 mBTC">50 mBTC</option>
-                    <option value="20 mBTC">20 mBTC</option>
-                    <option value="10 mBTC">10 mBTC</option>
-                    <option value="5 mBTC">5 mBTC</option>
-                    <option value="1 mBTC">1 mBTC</option>
-                    <option value="other">Other...</option>
-                  </select>
-                  <div id="backDenominationOther" style="display: none;">
-                  <input id="backDenominationOtherAmount" maxlength="5" size="6" value="1" onChange="setDenomination('other');">
-                  <select id="backDenominationOtherUnit" onChange="setDenomination('other');">
-                  	<option value="BTC">BTC</option>
-                  	<option value="mBTC">mBTC</option>
-                  	<option value="&mu;BTC">&mu;BTC</option>
-                  	<option value="bits">bits</option>
-                  </select>
-                  </div><!-- end backDenominationOther -->
-                              </div>
-
-                        <div style="float: left; margin: 0 0 0 80px;">
-                       Message:
-                       <select id="backTextChooser" onChange="
-                       		var toggleBackLongText = (this.value == 'instructions' ? 'block' : 'none');
-                       		var toggleBackCustomMessage = (this.value == 'message' ? 'block' : 'none');
-                           document.getElementById('backLongText').style.display=toggleBackLongText;
-                           document.getElementById('backCustomMessage').style.display=toggleBackCustomMessage;">
-                            <option value="instructions">Instructions</option>
-                            <option value="message">Write your own...</option>
-                            <option value="">Blank</option>
-                       </select>
-
-                        </div>
-
-                        <div style="float: left; margin: 0 0 0 50px;">
-                           <input type="checkbox" checked id="backTextCheckbox2"
-                   			 onClick="var toggleStatus = (this.checked ? 'block' : 'none');
-                              document.getElementById('backAmount').style.display=toggleStatus;
-                              document.getElementById('backDate').style.display=toggleStatus;
-                              document.getElementById('backNotes').style.display=toggleStatus;
-                              document.getElementById('backLines').style.display=toggleStatus;">
-                              Include notes area
-                         </div>
-                </div><!-- backTextControl -->
 			</div><!-- end commands -->
-
-                <div id="backText">
-					<div id="backSeal"><p id="backSealBig">1000</p><p id="backSealSmall">mBTC</p><img src="images/front-seal.png" width="105" height="78"></div>
-
-                    <div id="backPaperWallet"></div>
-                	<div id="backAmount"></div>
-                	<div id="backDate"></div>
-                	<div id="backNotes"></div>
-                    <div id="backLines"><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
-
-                    <div id="backCustomMessage">
-                    	<div id="backCustomMessageContent" style="display: none;"></div>
-                        <textarea id="backCustomMessageEntry" placeholder="Enter message here" onChange="document.getElementById('backCustomMessageContent').innerHTML=this.value.replace(/(?:\r\n|\r|\n)/g, '<br />');"></textarea>
-                    </div>
-                    <div id="backLongText">
-                      <ul>
-                          <li id="backInst1"></li>
-                          <li id="backInst2"></li>
-                          <li id="backInst3"></li>
-                          <li id="backInst4"></li>
-                      </ul>
-                  </div><!-- end backLongText -->
-                </div><!-- end backText -->
-
 				<img id="backsvg1" class="backsvg" src="./images/back-300dpi.jpg">
 			</div><!-- end backarea -->
 
@@ -10835,8 +10647,6 @@ Find your scissors! The final step is to cut out your wallet, fold it, and seal 
 
                         <br />
 						<span id="instructions13">Seal your wallet by placing two strips of sturdy <strong>light-blocking</strong> tape over the top and bottom edges of the private (folded) area. A zip-seal bag will keep it safe from moisture, which is especially important when using an inkjet printer.</span>
-						<br /><br />
-                        <a href="#" onClick="window.open(window.suppliesURL, '_blank'); return false;" class="nicerButton" style="width: 400px;">Purchase hologram stickers and/or zip-sealing bags &raquo;</a>
 
 						<br /><br />
 
@@ -10873,7 +10683,7 @@ Find your scissors! The final step is to cut out your wallet, fold it, and seal 
 					<h1>Validate or decrypt private key</h1>
 					<div style="width: 45%; float: left; padding: 0 15px; border-right: 3px solid #ccc;">
                     	<p><em>This feature works for private keys made here as well as those generated using any other Bitcoin service or software, e.g. bitaddress.org or brainwallet.org</em></p>
-						<p><strong>Enter or <a onClick="ninja.wallets.detailwallet.qrscanner.start()">scan</a> any private key to verify that the key is valid</strong> and show its corresponding public key. If your private key validates, then you may be reassured that you will able to retrieve any funds sent to that wallet.</p>
+						<p><strong>Enter any private key to verify that the key is valid</strong> and show its corresponding public key. If your private key validates, then you may be reassured that you will able to retrieve any funds sent to that wallet.</p>
 						<p><strong>To duplicate or BIP38-encrypt any paper wallet</strong>, just validate its private key and click the "Use these details to print a paper wallet" button.</p>
  						<p><strong>Is your wallet BIP38 encrypted?</strong> If so, you can use this form to decrypt your private key and recover the standard Wallet Import Format (WIF) key suitable for wallet software and services that don't directly support BIP38 importing.</p>
                         <p><strong>You may also type in a "brain wallet" passphrase</strong> to see the corresponding SHA256 hashed keys.</p>
@@ -11010,12 +10820,12 @@ Find your scissors! The final step is to cut out your wallet, fold it, and seal 
                     After downloading and extracting the <a href="https://github.com/Stipend-Developer/stipend-paper" target="_blank">ZIP package</a> for this generator, you should find a file named <b>generate-wallet.html.sig</b>
                     which you can use to:
                     <ol><li> verify that <strong>generate-wallet.html</strong> hasn't been tampered with, and</li>
-                    <li>get proof that it really was authored by NickSr (nicksr987@gmail.com) whose public key and fingerprint can be confirmed at <a href="https://www.stipend.me">stipend.me</a>, bitcointalk.org, etc.</li>
+                    <li>get proof that it really was authored by NickSr (nicksr987@gmail.com) whose public key and fingerprint can be confirmed at <a href="https://stipend.me">stipend.me</a>, bitcointalk.org, etc.</li>
                     </ol>
                     For example, if you have GPG installed, just open the terminal, change directory (cd) to where this file lives, and type:<br />
                     <code>  gpg --recv-key 36E1D9B6<br />
                     gpg --verify --with-fingerprint generate-wallet.html.sig generate-wallet.html</code>
-                   <br /><br />And then verify the signature's fingerprint against NickSr's <a href="https://www.stipend.me">published PGP/GPG fingerprint</a>.<br /><br />
+                   <br /><br />And then verify the signature's fingerprint against NickSr's <a href="https://stipend.me">published PGP/GPG fingerprint</a>.<br /><br />
                   <a href="https://www.google.com/search?q=how+to+verify+PGP+%22.sig%22+signature+on+file">Learn how to verify a PGP-signed file &raquo;</a>
                   <br />
                   <br />
@@ -11024,8 +10834,8 @@ Find your scissors! The final step is to cut out your wallet, fold it, and seal 
                 </div>
 
             	<span class="item"><b>Security &amp; signatures</b></span>
-                <span class="item" style="font-size: 90%;">For <a href="https://bitcoinpaperwallet.com/#security" target="_blank">secure wallet generation</a>, do not print wallets "live" from bitcoinpaperwallet.com.<br />Instead, download this generator from GitHub and run the HTML as a "local" file:</span>
-				<span class="item"><a href="https://github.com/cantonbecker/bitcoinpaperwallet" target="_blank" id="footerlabelgithub"><strong>Secure Download</strong> (GitHub ZIP file)</a></span>
+                <span class="item" style="font-size: 90%;">For secure wallet generation, do not print wallets "live" from wallet.stipend.me<br />Instead, download this generator from GitHub and run the HTML as a "local" file:</span>
+				<span class="item"><a href="https://github.com/Stipend-Developer/stipend-paper" target="_blank" id="footerlabelgithub"><strong>Secure Download</strong> (GitHub ZIP file)</a></span>
 
 				<span class="item" id="footerlabelsig" style="font-size: 90%;"><a href="#" onClick="document.getElementById('siginfo').style.display='block'; return(false);">Validate PGP/GPG signature</a></span>
 
@@ -13803,12 +13613,7 @@ function setDesign (whichDesign, isOnLoad, whichLanguage) {
 	if (!whichDesign) whichDesign = 'default';
 
 	// show the language menu if we're using the default design
-	if (whichDesign == 'default') {
-		document.getElementById('langPicker').style.display = 'inline';
-	} else {
-		document.getElementById('langPicker').style.display = 'none';
-	}
-
+	document.getElementById('langPicker').style.display = 'none';
 	// if we used the dropdown menu to select an alt-coin, we need to reload the page altogether.
 	if (!isOnLoad && whichDesign.substring(0,4) == 'alt-') window.location='?design=' + whichDesign;
 	// if we're already using an altcoin, reload the page no matter which design we choose.
@@ -13821,33 +13626,11 @@ function setDesign (whichDesign, isOnLoad, whichLanguage) {
 
 	// now deal with JPG-style backgrounds, and apply instructions to default design
 
-	if (whichDesign == 'default') {
-		var myFront = './images/front-300dpi.jpg';
-		var myBack = './images/back-300dpi.jpg';
-		var myPreview = './images/finished-sample-sealed.jpg';
-		// setup proper back text translation & controls
-		document.getElementById('backTextControl').style.display='block';
-		document.getElementById('backText').style.display='block';
-		document.getElementById("backPaperWallet").innerHTML = translations[whichLanguage]['backPaperWallet'];
-		document.getElementById("backAmount").innerHTML = translations[whichLanguage]['backAmount'];
-		document.getElementById("backDate").innerHTML = translations[whichLanguage]['backDate'];
-		document.getElementById("backNotes").innerHTML = translations[whichLanguage]['backNotes'];
-		document.getElementById("backLongText").style.fontSize = translations[whichLanguage]['backLongTextFontSize'];
-		document.getElementById("backInst1").innerHTML = translations[whichLanguage]['backInst1'];
-		document.getElementById("backInst2").innerHTML = translations[whichLanguage]['backInst2'];
-		document.getElementById("backInst3").innerHTML = translations[whichLanguage]['backInst3'];
-		document.getElementById("backInst4").innerHTML = translations[whichLanguage]['backInst4'];
-
-	} else {
-		var myFront = './images/front-300dpi-' + whichDesign + '.jpg';
-		var myBack = './images/back-300dpi-' + whichDesign + '.jpg';
-		var myPreview = './images/finished-sample-' + whichDesign + '.jpg';
-		document.getElementById('backTextControl').style.display='none';
-		document.getElementById('backText').style.display='none';
-	}
-
+	var myFront = './images/front-300dpi-alt-stipend.jpg';
+	var myBack = './images/back-300dpi-alt-stipend.jpg';
+	// setup proper back text translation & controls
 	window.frontJPG=myFront;
-	window.designChoice=whichDesign;
+	window.designChoice='alt-stipend';
 
 	// if the front artwork is ready, set it to either the correspondong JPG, or draw it
 	if (document.getElementById('papersvg1') != null) {
