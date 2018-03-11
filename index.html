@@ -11776,6 +11776,7 @@ ninja.publicKey = {
 		generateNewWallet: function(addressSeed, callback) {
 			if (addressSeed == null) {
 				var key = new Bitcoin.ECKey(false);
+				key.setCompressed(true);
 				addressSeed = { address: key.getBitcoinAddress(), wifKey: key.getBitcoinWalletImportFormat() };
 			}
 			ninja.wallets.paperwallet.lastwallet = addressSeed;
